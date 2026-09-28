@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-charcoal: #141210;
+  --color-charcoal-soft: #1c1815;
+  --color-ivory: #f3eee4;
+  --color-ivory-soft: #ece4d4;
+  --color-sand: #c9b79c;
+  --color-ember-brown: #3b2a20;
+  --color-ember: #8c3b22;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-charcoal: var(--color-charcoal);
+  --color-charcoal-soft: var(--color-charcoal-soft);
+  --color-ivory: var(--color-ivory);
+  --color-ivory-soft: var(--color-ivory-soft);
+  --color-sand: var(--color-sand);
+  --color-ember-brown: var(--color-ember-brown);
+  --color-ember: var(--color-ember);
+
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+
+  --animate-fade-up: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-hero-zoom: hero-zoom 20s ease-out forwards;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(1.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-zoom {
+    from {
+      transform: scale(1.08);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--color-ember);
+  color: var(--color-ivory);
+}
+
+:focus-visible {
+  outline: 1.5px solid var(--color-ember);
+  outline-offset: 3px;
+}
+
+.text-balance {
+  text-wrap: balance;
 }
