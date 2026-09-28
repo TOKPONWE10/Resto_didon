@@ -9,8 +9,8 @@ export function Team() {
   const [lead, ...rest] = team;
 
   return (
-    <section id="equipe" className="scroll-mt-20 bg-ivory py-28 sm:py-36 lg:py-44">
-      <Container className="flex flex-col gap-20">
+    <section id="equipe" className="scroll-mt-20 bg-ivory py-16 sm:py-20 lg:py-24">
+      <Container className="flex flex-col gap-12">
         <SectionHeading eyebrow="L'équipe" title="Celles et ceux qui font Didon." />
 
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-10">

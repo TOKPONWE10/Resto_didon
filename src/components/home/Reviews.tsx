@@ -6,9 +6,9 @@ export function Reviews() {
   const maxCount = Math.max(...reviewsSource.breakdown.map((b) => b.count));
 
   return (
-    <section className="bg-ivory py-24 sm:py-32">
+    <section className="bg-ivory py-14 sm:py-16">
       <Container>
-        <div className="flex flex-col gap-14 border-y border-charcoal/10 py-16 lg:flex-row lg:items-center lg:justify-between lg:gap-20">
+        <div className="flex flex-col gap-10 border-y border-charcoal/10 py-12 lg:flex-row lg:items-center lg:justify-between lg:gap-14">
           <Reveal className="flex flex-col gap-4">
             <div className="flex items-baseline gap-3">
               <span className="font-serif text-7xl leading-none sm:text-8xl">

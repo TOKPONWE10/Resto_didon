@@ -5,11 +5,12 @@ import { Container } from "@/components/ui/Container";
 export const metadata: Metadata = {
   title: "Mentions légales",
   robots: { index: false, follow: true },
+  alternates: { canonical: "/mentions-legales" },
 };
 
 export default function MentionsLegalesPage() {
   return (
-    <div className="bg-ivory pt-40 pb-28">
+    <div className="bg-ivory pt-32 pb-20">
       <Container className="flex max-w-3xl flex-col gap-10">
         <h1 className="font-serif text-4xl sm:text-5xl">Mentions légales</h1>
 

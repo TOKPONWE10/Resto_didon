@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/Button";
 
 export function MenuPreview() {
   return (
-    <section id="carte" className="scroll-mt-20 bg-ivory py-28 sm:py-36 lg:py-44">
-      <Container className="flex flex-col gap-20">
+    <section id="carte" className="scroll-mt-20 bg-ivory py-16 sm:py-20 lg:py-24">
+      <Container className="flex flex-col gap-12">
         <div className="flex flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
             eyebrow="La Carte"
@@ -23,7 +23,7 @@ export function MenuPreview() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {menuHighlightItems.map((item, index) => (
             <Reveal key={item.name} delay={0.05 * index}>
               <article className="flex h-full flex-col gap-6">

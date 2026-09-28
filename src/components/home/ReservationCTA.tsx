@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function ReservationCTA() {
   return (
-    <section className="relative flex min-h-[75vh] w-full items-center overflow-hidden bg-charcoal py-32">
+    <section className="relative flex min-h-[55vh] w-full items-center overflow-hidden bg-charcoal py-20">
       <Image
         src="/images/hero/hero-salle-2.jpg"
         alt="Salle du restaurant Didon prête à accueillir ses convives"

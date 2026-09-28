@@ -8,8 +8,8 @@ export function Location() {
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${restaurant.address.mapsQuery}`;
 
   return (
-    <section id="contact" className="scroll-mt-20 bg-ivory py-28 sm:py-36 lg:py-44">
-      <Container className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-10">
+    <section id="contact" className="scroll-mt-20 bg-ivory py-16 sm:py-20 lg:py-24">
+      <Container className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-10">
         <div className="flex flex-col gap-12 lg:col-span-5">
           <SectionHeading eyebrow="Localisation" title="Au cœur de Saint-Germain-des-Prés." />
 

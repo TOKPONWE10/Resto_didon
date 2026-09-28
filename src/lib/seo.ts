@@ -51,7 +51,7 @@ export function restaurantJsonLd() {
     },
     url: siteUrl,
     image: `${siteUrl}/images/hero/hero-braise-1.jpg`,
-    acceptsReservations: "True",
+    acceptsReservations: true,
     reservationsUrl: restaurant.reservation.url,
     menu: restaurant.documents.carte,
     sameAs: [restaurant.social.instagram, restaurant.social.facebook],

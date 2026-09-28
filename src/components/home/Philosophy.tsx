@@ -5,8 +5,8 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Philosophy() {
   return (
-    <section className="bg-ivory py-28 sm:py-36 lg:py-44">
-      <Container className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-10">
+    <section className="bg-ivory py-16 sm:py-20 lg:py-24">
+      <Container className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-10">
         <div className="order-2 flex flex-col gap-8 lg:order-1 lg:col-span-5">
           <Reveal>
             <span className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] text-ember">

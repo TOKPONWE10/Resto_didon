@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Sisters() {
   return (
-    <section className="bg-ivory-soft py-24 sm:py-28">
+    <section className="bg-ivory-soft py-14 sm:py-16">
       <Container>
         <Reveal>
           <span className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] text-charcoal/50">

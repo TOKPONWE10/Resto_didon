@@ -9,7 +9,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-ember/40 bg-charcoal text-ivory">
-      <Container className="py-20 sm:py-24 lg:py-28">
+      <Container className="py-14 sm:py-16 lg:py-20">
         <p className="max-w-lg font-serif text-4xl italic leading-[1.15] text-ivory sm:text-5xl">
           À bientôt, à Didon.
         </p>

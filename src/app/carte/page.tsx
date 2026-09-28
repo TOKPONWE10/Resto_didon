@@ -4,16 +4,26 @@ import { restaurant } from "@/data/restaurant";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
+const cartePageDescription =
+  "Découvrez la carte du restaurant Didon : cuisine française bistronomique de partage, cuite au charbon de bois, à Saint-Germain-des-Prés, Paris.";
+
 export const metadata: Metadata = {
   title: "La Carte",
-  description:
-    "Découvrez la carte du restaurant Didon : cuisine française bistronomique de partage, cuite au charbon de bois, à Saint-Germain-des-Prés, Paris.",
+  description: cartePageDescription,
+  alternates: {
+    canonical: "/carte",
+  },
+  openGraph: {
+    title: "La Carte — Didon",
+    description: cartePageDescription,
+    url: "/carte",
+  },
 };
 
 export default function CartePage() {
   return (
-    <div className="bg-ivory pt-44 pb-32">
-      <Container className="flex flex-col gap-20">
+    <div className="bg-ivory pt-32 pb-20">
+      <Container className="flex flex-col gap-14">
         <div className="flex flex-col gap-7 border-b border-charcoal/10 pb-14">
           <span className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] text-ember">
             <span className="h-px w-8 bg-ember/60" />
@@ -41,7 +51,7 @@ export default function CartePage() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-24">
+        <div className="flex flex-col gap-14">
           {menu.map((category) => (
             <div key={category.id} className="flex flex-col gap-10">
               <Reveal>

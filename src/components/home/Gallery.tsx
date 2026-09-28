@@ -51,8 +51,8 @@ export function Gallery() {
   }, [activeIndex, close, showPrev, showNext]);
 
   return (
-    <section id="galerie" className="scroll-mt-20 bg-ivory py-28 sm:py-36 lg:py-44">
-      <Container className="flex flex-col gap-20">
+    <section id="galerie" className="scroll-mt-20 bg-ivory py-16 sm:py-20 lg:py-24">
+      <Container className="flex flex-col gap-12">
         <SectionHeading eyebrow="Galerie" title="L'instant Didon, en images." />
 
         <div className="grid grid-flow-row-dense grid-cols-2 auto-rows-[9rem] gap-3 sm:grid-cols-4 sm:gap-4 lg:auto-rows-[12rem]">

@@ -5,8 +5,8 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Maison() {
   return (
-    <section id="maison" className="scroll-mt-20 bg-ivory py-28 sm:py-36 lg:py-44">
-      <Container className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-10">
+    <section id="maison" className="scroll-mt-20 bg-ivory py-16 sm:py-20 lg:py-24">
+      <Container className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-6">
           <Reveal>
             <div className="group relative aspect-[4/5] w-full overflow-hidden">

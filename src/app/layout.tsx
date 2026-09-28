@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     images: ["/images/hero/hero-braise-1.jpg"],
   },
   alternates: {
-    canonical: siteUrl,
+    canonical: "/",
   },
   robots: {
     index: true,

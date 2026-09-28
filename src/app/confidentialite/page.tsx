@@ -5,11 +5,12 @@ import { Container } from "@/components/ui/Container";
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
   robots: { index: false, follow: true },
+  alternates: { canonical: "/confidentialite" },
 };
 
 export default function ConfidentialitePage() {
   return (
-    <div className="bg-ivory pt-40 pb-28">
+    <div className="bg-ivory pt-32 pb-20">
       <Container className="flex max-w-3xl flex-col gap-10">
         <h1 className="font-serif text-4xl sm:text-5xl">Politique de confidentialité</h1>
 

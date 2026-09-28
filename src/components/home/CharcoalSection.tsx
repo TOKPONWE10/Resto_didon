@@ -4,7 +4,7 @@ import { ParallaxImage } from "@/components/ui/ParallaxImage";
 
 export function CharcoalSection() {
   return (
-    <section className="relative flex min-h-[92vh] w-full items-center overflow-hidden bg-charcoal py-32 sm:py-40">
+    <section className="relative flex min-h-[75vh] w-full items-center overflow-hidden bg-charcoal py-20 sm:py-24">
       <ParallaxImage
         src="/images/gallery/salle-3.jpg"
         alt="Cuisine au charbon de bois, ambiance du restaurant Didon"

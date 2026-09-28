@@ -27,8 +27,8 @@ const steps = [
 
 export function ExperienceSteps() {
   return (
-    <section id="experience" className="scroll-mt-20 bg-ember-brown py-28 text-ivory sm:py-36 lg:py-44">
-      <Container className="flex flex-col gap-20">
+    <section id="experience" className="scroll-mt-20 bg-ember-brown py-16 text-ivory sm:py-20 lg:py-24">
+      <Container className="flex flex-col gap-12">
         <SectionHeading
           eyebrow="L'expérience Didon"
           title="Un parcours simple, du désir à la table."
