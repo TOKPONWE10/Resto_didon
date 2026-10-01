@@ -88,3 +88,32 @@ p {
 .text-balance {
   text-wrap: balance;
 }
+
+/* Rangées qui défilent horizontalement jusqu'au bord de l'écran, tout en
+   restant alignées sur la marge du conteneur (max-w 1400px, px-6/10/16). */
+.bleed-x {
+  --gutter: 1.5rem;
+  padding-inline: max(var(--gutter), calc((100% - 1400px) / 2 + var(--gutter)));
+  scroll-padding-inline: max(var(--gutter), calc((100% - 1400px) / 2 + var(--gutter)));
+}
+@media (min-width: 640px) {
+  .bleed-x { --gutter: 2.5rem; }
+}
+@media (min-width: 1024px) {
+  .bleed-x { --gutter: 4rem; }
+}
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Pendant le glisser à la souris, l'aimantation gênerait le mouvement. */
+.is-dragging { scroll-snap-type: none !important; cursor: grabbing; user-select: none; }
+
+/* Lueur de braise des plats sans photo : l'identité du restaurant, la cuisine
+   au charbon de bois. */
+.ember-glow {
+  background:
+    radial-gradient(120% 65% at 50% 118%, rgba(140, 59, 34, 0.62), transparent 62%),
+    radial-gradient(70% 40% at 85% 0%, rgba(201, 183, 156, 0.07), transparent 70%),
+    var(--color-charcoal);
+}

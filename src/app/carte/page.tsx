@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { menu } from "@/data/menu";
 import { restaurant } from "@/data/restaurant";
 import { Container } from "@/components/ui/Container";
-import { Reveal } from "@/components/ui/Reveal";
+import { DishCarousel } from "@/components/carte/DishCarousel";
 
 const cartePageDescription =
   "Découvrez la carte du restaurant Didon : cuisine française bistronomique de partage, cuite au charbon de bois, à Saint-Germain-des-Prés, Paris.";
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function CartePage() {
   return (
-    <div className="bg-ivory pt-32 pb-20">
+    <div className="bg-ivory pt-32 pb-24">
       <Container className="flex flex-col gap-14">
         <div className="flex flex-col gap-7 border-b border-charcoal/10 pb-14">
           <span className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] text-ember">
@@ -51,42 +51,19 @@ export default function CartePage() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-14">
-          {menu.map((category) => (
-            <div key={category.id} className="flex flex-col gap-10">
-              <Reveal>
-                <h2 className="font-serif text-4xl italic text-ember sm:text-5xl">
-                  {category.title}
-                </h2>
-              </Reveal>
-              <div className="grid grid-cols-1 gap-x-12 gap-y-10 lg:grid-cols-2">
-                {category.items.map((item, index) => (
-                  <Reveal key={item.name} delay={0.03 * index}>
-                    <div className="flex flex-col gap-2 border-b border-charcoal/10 pb-7">
-                      <div className="flex items-baseline justify-between gap-4">
-                        <h3 className="font-serif text-2xl">
-                          {item.name}
-                          {item.tag ? (
-                            <span className="ml-2 align-middle text-[0.65rem] font-sans font-medium uppercase tracking-[0.15em] text-charcoal/40">
-                              {item.tag}
-                            </span>
-                          ) : null}
-                        </h3>
-                        <span className="whitespace-nowrap font-serif text-xl text-ember">
-                          {item.price}
-                        </span>
-                      </div>
-                      <p className="max-w-md text-base leading-relaxed text-charcoal/60">
-                        {item.description}
-                      </p>
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
       </Container>
+
+      {/* Chaque catégorie défile horizontalement ; les plats sont numérotés
+          sur l'ensemble de la carte. */}
+      <div className="mt-16 flex flex-col gap-20">
+        {menu.map((category, i) => (
+          <DishCarousel
+            key={category.id}
+            category={category}
+            startAt={1 + menu.slice(0, i).reduce((n, c) => n + c.items.length, 0)}
+          />
+        ))}
+      </div>
     </div>
   );
 }

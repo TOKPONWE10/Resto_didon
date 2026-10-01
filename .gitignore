@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Configuration locale des outils (générée par next dev ou par l'assistant de code)
+.claude/
+CLAUDE.md
+AGENTS.md

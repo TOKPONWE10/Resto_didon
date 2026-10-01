@@ -3,6 +3,12 @@ export type MenuItem = {
   price: string;
   description: string;
   tag?: "végétarien" | "végan" | "sans gluten";
+  /**
+   * Photo du plat lui-même, et seulement de lui. Plusieurs photos étaient
+   * associées à d'autres plats (une assiette de betterave pour le brocolini, un
+   * poisson pour les gambas, des fraises pour le chocolat) : elles ont été
+   * retirées. Sans photo, la carte affiche un fond de braise.
+   */
   image?: string;
 };
 
@@ -23,7 +29,6 @@ export const menu: MenuCategory[] = [
         tag: "végétarien",
         description:
           "Grillé, crème persillade, hollandaise au pamplemousse, jaune d'œuf confit (supplément de 3 € pour une version non végétarienne avec poutargue).",
-        image: "/images/food/entree-betterave.jpg",
       },
       {
         name: "Tomate ananas",
@@ -37,7 +42,6 @@ export const menu: MenuCategory[] = [
         price: "24 €",
         description:
           "En tacos aux 2 saveurs, vierge tomate, bisque, aguachile, concombre.",
-        image: "/images/food/entree-poisson.jpg",
       },
       {
         name: "Magret de canard",
@@ -75,7 +79,6 @@ export const menu: MenuCategory[] = [
         price: "45 €",
         description:
           "Grillée, mole verde, chou-fleur en 2 façons, ail confit, persil frit, jus corsé.",
-        image: "/images/food/entree-carpaccio-boeuf.jpg",
       },
       {
         name: "Tomahawk maturé 40 jours",
@@ -155,7 +158,6 @@ export const menu: MenuCategory[] = [
         price: "18 €",
         description:
           "Fondant en gâteau, ganache blanche à la menthe, fraises, tuile et sorbet de fraise à la menthe.",
-        image: "/images/food/dessert-fraises.jpg",
       },
     ],
   },
