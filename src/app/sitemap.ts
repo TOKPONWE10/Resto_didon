@@ -1,7 +1,10 @@
 import type { MetadataRoute } from "next";
 import { siteUrl } from "@/lib/seo";
+import { DEMO } from "@/lib/demo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  if (DEMO) return [];
+
   const routes = ["", "/carte"];
 
   return routes.map((route) => ({

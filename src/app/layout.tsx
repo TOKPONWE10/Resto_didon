@@ -1,8 +1,11 @@
+import type { CSSProperties } from "react";
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyReserveBar } from "@/components/layout/StickyReserveBar";
+import { DemoBanner } from "@/components/layout/DemoBanner";
+import { DEMO } from "@/lib/demo";
 import { restaurant } from "@/data/restaurant";
 import { restaurantJsonLd, siteUrl } from "@/lib/seo";
 import "./globals.css";
@@ -58,10 +61,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  // En démonstration, le site ne doit pas apparaître dans les moteurs de
+  // recherche : il concurrencerait le site officiel du restaurant.
+  robots: DEMO
+    ? { index: false, follow: false, googleBot: { index: false, follow: false } }
+    : { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
@@ -72,12 +76,24 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" className={`${fraunces.variable} ${inter.variable} h-full`}>
-      <body className="flex min-h-full flex-col bg-ivory font-sans text-charcoal antialiased">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd()) }}
-        />
+    <html
+      lang="fr"
+      className={`${fraunces.variable} ${inter.variable} h-full`}
+      style={DEMO ? ({ "--demo-h": "40px" } as CSSProperties) : undefined}
+    >
+      <body
+        className="flex min-h-full flex-col bg-ivory font-sans text-charcoal antialiased"
+        style={DEMO ? { paddingTop: "var(--demo-h)" } : undefined}
+      >
+        {/* Les données structurées « Restaurant » présenteraient ce site comme
+            celui du restaurant : réservées à la version validée par Didon. */}
+        {DEMO ? null : (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd()) }}
+          />
+        )}
+        <DemoBanner />
         <Header />
         <main className="flex-1 pb-16 md:pb-0">{children}</main>
         <Footer />

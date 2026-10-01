@@ -32,7 +32,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
+        className={`fixed inset-x-0 top-[var(--demo-h,0px)] z-50 transition-colors duration-500 ${
           solid ? "bg-charcoal/95 backdrop-blur-md" : "bg-transparent"
         }`}
       >

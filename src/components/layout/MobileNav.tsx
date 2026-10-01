@@ -19,7 +19,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[45] flex flex-col bg-charcoal px-6 pt-28 pb-10 lg:hidden"
+          className="fixed inset-x-0 bottom-0 top-[var(--demo-h,0px)] z-[45] flex flex-col bg-charcoal px-6 pt-28 pb-10 lg:hidden"
         >
           <nav className="flex flex-1 flex-col justify-center gap-2">
             {navLinks.map((link, index) => (
